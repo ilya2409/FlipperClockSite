@@ -8,4 +8,4 @@
   или гаризантального если наоборот
 * (>‿◠)✌
 * Ссылка на второй сайт
-  https://ilya2409.github.io/FlipperClockSite/
+  https://ilya2409.github.io/FlipperClockSite/turquoise_forest/clock_page.html
