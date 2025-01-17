@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часы и Дата</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('./born2bsportyV2/Born2bSportyV2.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'CustomFont', sans-serif;
+            /* background-color: #ff8200; */
+            /* background-image: url("180.jpg"); */
+        }
+        #clock {
+            font-size: 1400%; /* Увеличенный размер цифр для часов */
+            margin-bottom: 0%;
+            color: #ffffff;
+
+            display: flex;
+            justify-content: center;
+        }
+        #date {
+            font-size: 500%; /* Увеличенный размер цифр для даты */
+            /* color: #2c2c2c; */
+            color: #ffffff;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .header_container {
+            width: 100vw;
+
+            display: flex;
+            /* justify-content: left; */
+        }
+
+        .main_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            /* margin-top: 12.5vw; */
+            position: relative;
+        }
+
+        svg {
+            width: 20%; /* Уменьшенная ширина */
+            height: auto; /* Уменьшенная высота */
+            padding: 1% 1% 1% 1%;
+
+        }
+
+        .img_bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        #img_180 {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="img_bg">
+        <img id="img_180" src="4df9-x4plus.png" alt="">
+    </div>
+
+    <div class="main_container" id="main">
+        <div id="clock"></div>
+        <div id="date"></div>
+    </div>
+
+    <script>
+
+const a = window.innerWidth, b = window.innerHeight;
+        console.log(`Окно просмотра: ${a} x ${b}`); // Выводим размеры окна просмотра в консоль
+
+        var win_margin_0 = 0
+        const win_margin_1 = b*0.25
+        const win_margin_2 = b*0.35
+        if (b > a) {
+            win_margin_0 = win_margin_2
+        }
+
+        else {
+            win_margin_0 = win_margin_1
+        }
+
+        function ContentSize() {
+            document.getElementById("main").style.paddingTop = `${win_margin_0}px`
+        }
+
+        console.log(`${win_margin_0}px`)
+        console.log(`${win_margin_1}px`)
+        console.log(`${win_margin_2}px`)
+
+        function UpdateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('date').textContent = `${day}-${month}-${year}`;
+        }
+
+        ContentSize();
+
+        setInterval(UpdateClock, 1000);
+        UpdateClock(); // Initial call to display the time immediately
+
+    </script>
+</body>
+</html>
