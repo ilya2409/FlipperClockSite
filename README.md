@@ -9,3 +9,5 @@
 * (>‿◠)✌
 * Ссылка на второй сайт
   https://ilya2409.github.io/FlipperClockSite/turquoise_forest/clock_page.html
+* Ещё одна ссылочка
+  https://ilya2409.github.io/FlipperClockSite/Video_wallpapper_html_page/0_page.html
